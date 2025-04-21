@@ -159,4 +159,41 @@ button[type="submit"]:active {
     }
 
     /* You might adjust other elements like font sizes if needed */
+}/* Add this to your existing style.css if needed */
+
+/* Ensure fieldsets and legends look consistent */
+fieldset {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px; /* Ensure spacing */
 }
+
+fieldset legend {
+    padding: 0 10px;
+    font-weight: 600;
+    color: #555; /* Match label color */
+    font-size: 0.95em; /* Match label size */
+}
+
+/* Style for the checkbox label inside the fieldset */
+fieldset label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle; /* Align checkbox nicely with text */
+}
+
+/* Ensure the phone input container takes full width */
+.iti {
+    width: 100%;
+    display: block; /* Make it behave like other block elements */
+}
+
+/* You might need to adjust padding/margins slightly if the
+   intl-tel-input flag dropdown causes layout issues */
