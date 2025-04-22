@@ -270,3 +270,65 @@ button[type="submit"]:active {
     label, legend, input, select, button { font-size: 1em; } /* Ensure readable size */
     .terms-group label { font-size: 0.85em; }
 }
+/* Add these styles to your style.css */
+
+/* ----- Choices.js Customization ----- */
+
+/* Ensure the Choices container blends well */
+.choices {
+    margin-bottom: 0; /* Remove default bottom margin if it interferes with .form-group */
+}
+
+/* Style the dropdown list items */
+.choices__list--dropdown .choices__item--choice {
+    padding: 8px 12px; /* Adjust padding as needed */
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center flag and text vertically */
+}
+
+/* Style the flag icon within the dropdown */
+.choices__item--choice .fi {
+    margin-right: 10px; /* Space between flag and text */
+    border: 1px solid #eee; /* Optional subtle border around flag */
+    /* --- You might need to set a fixed size if flags render inconsistently --- */
+     width: 1.33em;  /* Example fixed width */
+     height: 1em;    /* Example fixed height */
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+     vertical-align: middle; /* Align with text */
+     display: inline-block; /* Ensure block properties apply */
+     flex-shrink: 0; /* Prevent flag from shrinking */
+}
+
+/* Optional: Style the selected item text (if not using callbackRenderSelectedItem) */
+/* .choices__list--single .choices__item { */
+    /* You might add padding-left here if you want space for a potential flag */
+/* } */
+
+/* Ensure the input field inside Choices.js looks consistent */
+.choices__inner {
+    /* Match padding and border-radius with your other inputs */
+    padding: 6.5px 7.5px 3.75px; /* Default Choices.js padding, adjust if needed */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    min-height: 45px; /* Match height of other inputs */
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.is-focused .choices__inner,
+.is-open .choices__inner {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Style the search input */
+.choices__input {
+     /* Match font size */
+     font-size: 1em;
+     background-color: #fff; /* Ensure background */
+     margin-bottom: 0; /* Reset margin */
+     padding: 5px; /* Adjust as needed */
+}
