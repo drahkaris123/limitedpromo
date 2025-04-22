@@ -1,199 +1,272 @@
-/* General Body Styling (Apply your site's overall style) */
-body {
+/* =========================================
+   General Page Styles
+   ========================================= */
+   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.6;
-    padding: 20px;
-    max-width: 700px; /* Adjust max-width as needed */
-    margin: 40px auto; /* Center the content */
-    background-color: #f4f7f6;
     color: #333;
+    background-color: #f4f7f6;
+    padding: 20px;
+    margin: 0; /* Remove default margin */
+}
+
+/* Center the main content container */
+.container { /* Add this class to a wrapping div in your HTML if needed, or apply max-width/margin to body */
+    max-width: 700px;
+    margin: 40px auto; /* Center container */
 }
 
 h1, h2 {
     color: #2c3e50;
+    text-align: center; /* Center headings */
+    margin-bottom: 15px;
 }
 
-/* Form Container Styling */
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   Form Styles
+   ========================================= */
+
+/* Form Container */
 #contact-form {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 30px 40px; /* More horizontal padding */
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for form elements containers (optional, good for layout) */
+/* Form Element Grouping */
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 22px; /* Slightly more space */
 }
 
-/* Label Styling */
-label, legend {
-    display: block; /* Ensure labels are on their own line */
+/* Labels */
+label {
+    display: block;
     margin-bottom: 8px;
     font-weight: 600;
     font-size: 0.95em;
     color: #555;
 }
 
-/* Input, Select, Textarea Styling */
+/* Mandatory Field Indicator */
+.mandatory-star {
+    color: red;
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+/* Input, Select Styling (General) */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="number"],
 input[type="date"],
 input[type="url"],
-select,
-textarea {
-    width: 100%; /* Full width */
+select {
+    width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    box-sizing: border-box;
     font-size: 1em;
-    transition: border-color 0.3s ease; /* Smooth transition for focus */
+    color: #333;
+    background-color: #fff; /* Ensure background is white */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Specific styling for textarea */
-textarea {
-    min-height: 120px;
-    resize: vertical; /* Allow vertical resizing */
+/* Adjust select arrow appearance (basic cross-browser) */
+select {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px auto;
+    padding-right: 40px; /* Make space for custom arrow */
 }
 
-/* Focus State - Improve usability */
+
+/* Focus State for Inputs/Selects */
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="tel"]:focus,
 input[type="number"]:focus,
 input[type="date"]:focus,
 input[type="url"]:focus,
-select:focus,
-textarea:focus {
-    border-color: #007bff; /* Highlight focus with a blue border */
-    outline: none; /* Remove default browser outline */
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); /* Optional: Add a subtle glow */
+select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
-/* Fieldset Styling (for radio/checkbox groups) */
+/* Fieldset Styling (for Radio/Checkbox groups) */
 fieldset {
-    border: 1px solid #ccc;
+    border: 1px solid #ddd; /* Lighter border */
     border-radius: 4px;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 15px 20px;
+    margin-bottom: 22px;
 }
 
 fieldset legend {
-    padding: 0 10px; /* Add spacing around the legend text */
+    padding: 0 10px;
     font-weight: 600;
-    color: #333;
-}
-
-/* Radio Button and Checkbox Labels (align them nicely) */
-fieldset label {
-    display: block; /* Stack them */
+    color: #555;
+    font-size: 0.95em;
     margin-bottom: 10px;
-    font-weight: normal; /* Normal weight for options */
+}
+
+/* Labels inside Fieldset (for radio/checkbox options) */
+fieldset label {
+    display: block;
+    margin-bottom: 12px; /* Spacing between options */
+    font-weight: normal;
     cursor: pointer;
+    font-size: 0.95em;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    margin-right: 8px;
-    vertical-align: middle; /* Align checkbox/radio with text */
+/* Radio Button Styling */
+input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+    transform: scale(1.1); /* Slightly larger radios */
+}
+
+/* Terms & Conditions Checkbox Area */
+.terms-group {
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 15px;
+    background-color: #f8f9fa; /* Subtle background */
+    border: 1px solid #eee;
+}
+
+.terms-group label {
+    display: flex;
+    align-items: flex-start;
+    font-weight: normal;
+    font-size: 0.9em;
+    line-height: 1.5;
+    cursor: pointer;
+    color: #444; /* Slightly darker text for readability */
+}
+
+.terms-group input[type="checkbox"] {
+    margin-right: 12px;
+    margin-top: 4px; /* Align checkbox */
+    flex-shrink: 0;
+    transform: scale(1.1); /* Slightly larger checkbox */
+}
+
+.terms-label { /* Span containing the text */
+    display: inline;
+}
+
+.terms-label a {
+    color: #0056b3;
+    font-weight: 500; /* Make links slightly bolder */
+}
+
+/* International Telephone Input Placeholder */
+.iti {
+    width: 100%;
+    display: block; /* Ensure it takes block layout */
+}
+/* Ensure the input itself inside iti takes full width */
+.iti input[type="tel"] {
+    width: 100%;
 }
 
 
-/* Submit Button Styling */
+/* Submit Button */
 button[type="submit"] {
     background-color: #007bff;
     color: white;
-    padding: 12px 25px;
+    padding: 12px 30px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
     font-weight: 600;
     transition: background-color 0.3s ease, transform 0.1s ease;
-    display: inline-block; /* Or block/flex depending on desired layout */
+    display: block; /* Make button block level */
+    width: 100%; /* Full width */
+    margin-top: 15px; /* Space above button */
 }
 
 button[type="submit"]:hover {
     background-color: #0056b3;
-    transform: translateY(-1px); /* Slight lift effect on hover */
+    transform: translateY(-2px); /* Slightly more lift */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 button[type="submit"]:active {
-    transform: translateY(0); /* Press down effect */
+    transform: translateY(0);
+    box-shadow: none;
 }
 
-/* Status Message Styling */
+/* Form Status Message Styling */
 #form-status {
     margin-top: 20px;
     font-weight: bold;
-    padding: 10px;
+    padding: 12px;
     border-radius: 4px;
+    text-align: center;
+    display: none; /* Hide initially, show via JS */
 }
 
-/* Example status styling (can be adjusted by JS) */
 #form-status.success {
     color: #155724;
     background-color: #d4edda;
     border: 1px solid #c3e6cb;
+    display: block; /* Show on success */
 }
 
 #form-status.error {
     color: #721c24;
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
+    display: block; /* Show on error */
 }
 
-/* --- Responsive Design --- */
-/* Example: Stack elements nicely on smaller screens */
+/* =========================================
+   Responsive Design
+   ========================================= */
 @media (max-width: 600px) {
     body {
-        padding: 15px;
+        padding: 10px; /* Less padding on small screens */
+    }
+
+    .container {
         margin: 20px auto;
+        max-width: 100%; /* Allow full width */
     }
 
     #contact-form {
-        padding: 20px;
+        padding: 20px; /* Less padding inside form */
     }
 
-    /* You might adjust other elements like font sizes if needed */
-}/* Add this to your existing style.css if needed */
+    button[type="submit"] {
+        padding: 12px 20px;
+    }
 
-/* Ensure fieldsets and legends look consistent */
-fieldset {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 15px;
-    margin-bottom: 20px; /* Ensure spacing */
+    /* Adjust font sizes if needed */
+    h1 { font-size: 1.8em; }
+    label, legend, input, select, button { font-size: 1em; } /* Ensure readable size */
+    .terms-group label { font-size: 0.85em; }
 }
-
-fieldset legend {
-    padding: 0 10px;
-    font-weight: 600;
-    color: #555; /* Match label color */
-    font-size: 0.95em; /* Match label size */
-}
-
-/* Style for the checkbox label inside the fieldset */
-fieldset label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: normal;
-    cursor: pointer;
-}
-
-input[type="checkbox"] {
-    margin-right: 8px;
-    vertical-align: middle; /* Align checkbox nicely with text */
-}
-
-/* Ensure the phone input container takes full width */
-.iti {
-    width: 100%;
-    display: block; /* Make it behave like other block elements */
-}
-
-/* You might need to adjust padding/margins slightly if the
-   intl-tel-input flag dropdown causes layout issues */
